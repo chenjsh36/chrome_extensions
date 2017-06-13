@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    color: #fff;
+}
+
+#main {
+    background-clip: padding-box;
+    background-color: #2F373D;
+    border: 2px solid rgba(178, 186, 193, 0.6);
+    border-radius: 2px;
+    padding: 10px 25px 0 25px;
+    position: relative;
+
+    height: 500px;
+    width: 250px;
+}

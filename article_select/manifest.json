@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "Web Article Select",
+  "description": "This extension used to select main content of web page.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "https://secure.flickr.com/",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_idle",
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "third_party/jquery-2.0.0.min.js",
+        "js/content_script.js"
+      ]
+    }
+  ]
+}
