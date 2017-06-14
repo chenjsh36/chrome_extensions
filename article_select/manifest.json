@@ -23,8 +23,12 @@
       "matches": [
         "*://*/*"
       ],
+      "css": [
+        "css/content_script.css"
+      ],
       "js": [
         "third_party/jquery-2.0.0.min.js",
+        "js/findMostP.js",
         "js/content_script.js"
       ]
     }

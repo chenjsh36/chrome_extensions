@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.hh-shadow-box {
+    pointer-events: none;
+    box-sizing: border-box;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    z-index: 2147483646;
+    border-color: rgba(255, 255, 255, 0.75) !important;
+    border-style: solid !important;
+    // background-color: rgba(255, 255, 255, .3);
+}
+
+.hh-shadow-box .hh-inner-box {
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+    border-width: 4px !important;
+    border-style: solid !important;
+    border-color: rgb(50, 225, 129) !important;
+    border-image: initial !important;
+
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 12px 0px;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(158, 158, 158) !important;
+    border-image: initial !important;
+}
