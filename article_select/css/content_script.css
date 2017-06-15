@@ -29,3 +29,34 @@
     border-color: rgb(158, 158, 158) !important;
     border-image: initial !important;
 }
+
+.hh-shadow-box .hh-expand-contract {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    pointer-events: initial;
+}
+.hh-shadow-box .hh-expand-contract .hh-expand,
+.hh-shadow-box .hh-expand-contract .hh-contract {
+
+    position: relative;
+    display: inline-block;
+    padding: 0 8px;
+    background-color: rgba(0, 0, 0, 0.68);
+    color: white;
+    font-size: 12px;
+    vertical-align: top;
+    cursor: pointer;
+    transiton: .3s all linear;
+}
+.hh-shadow-box .hh-expand-contract .hh-expand:hover,
+.hh-shadow-box .hh-expand-contract .hh-contract:hover {
+    background-color: rgba(0, 0, 0, .9);
+}
+.hh-shadow-box .hh-expand-contract .hh-expand {
+    border-radius: 4px 0 0 4px;
+}
+.hh-shadow-box .hh-expand-contract .hh-contract {
+    border-radius: 0 4px 4px 0;
+}

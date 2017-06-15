@@ -8,6 +8,7 @@ html, body {
 }
 
 #main {
+    display: none;
     background-clip: padding-box;
     background-color: #2F373D;
     border: 2px solid rgba(178, 186, 193, 0.6);

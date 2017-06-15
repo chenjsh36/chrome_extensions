@@ -1,3 +1,8 @@
+/**
+ * 原生 JS 实现 Dom 树分析寻找正文内容
+ * @param  {dom} dom [待分析的页面 DOM 元素]
+ * @return {dom}     [返回含正文内容的 DOM 元素]
+ */
 function getArticleContent(dom) {
     var mostP = findMostP(dom, 0);
     var mostPDom = mostP.dom;
@@ -22,13 +27,13 @@ function getArticleContent(dom) {
         }
     }
 
-    // 比较含有最多p儿子的元素A 和 含有最多p子孙的两个元素的元素B
-    if (pTagMostNum >= mostPNum * .5) {
-        console.log('元素 A 占据元素 B 的一大部分')
+    // 如果存在元素A 且 比较含有最多p儿子的元素A 和 含有最多p子孙的两个元素的元素B
+    if (pTagMostDom && pTagMostNum >= mostPNum * .5) {
+        console.log('[From findMostP] 元素 A 占据元素 B 的一大部分')
         // 元素 A 占据元素 B 的一大部分
         return getWholeArticle(pTagMostDom, mostPDom);
     } else {
-        console.log('元素A只是元素B的一小部分')
+        console.log('[From findMostP] 元素A只是元素B的一小部分')
         // 元素A只是元素B的一小部分
         return mostPDom;
     }
@@ -45,7 +50,6 @@ function findMostP(dom, len) {
     var mostPChild = dom;
     for (var i = 0, childLen = childs.length; i < childLen; i++) {
         childP = childs[i].getElementsByTagName('p');
-        // childP = childs[i].find('p');
         if (childP.length >= mostPNum) {
             mostPChild = childs[i];
             mostPNum = childP.length;
