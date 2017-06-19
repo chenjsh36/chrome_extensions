@@ -117,10 +117,14 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
             // 设置正文边框
             setShadowBox(artContent);
-            ifShow = true;            
+            ifShow = true;
+
+            initArtDistribution();
         } else {
             $shadowBox.hide();
             ifShow = false;
+
+            hideArtDistribution()
         }
     }
 

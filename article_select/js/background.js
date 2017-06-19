@@ -22,9 +22,9 @@ console.log('background');
 
 
 chrome.browserAction.onClicked.addListener(function() {
-    chrome.app.window.create('main.html', {
-        id: 'default'
-    })
+    // chrome.app.window.create('main.html', {
+    //     id: 'default'
+    // })
     sendMessageToCurrentTab('切换界面', function(response) {
         $message.text(response);
     });

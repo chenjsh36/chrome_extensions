@@ -32,11 +32,11 @@ var getArticleContent = function (body) {
 
         html = html.replace(regEx_script, "");  
         html = html.replace(regEx_style, "");  
-        html = html.replace(regEx_html, "\r\n");  
+        html = html.replace(regEx_html, "");  
         html = html.replace(/((\r\n|\n)\s*){2,}/gi, '\r\n');
-        // html = html.replace("((\r\n)|\n)[\\s\t ]*(\\1)+", "$1").replace("^((\r\n)|\n)", "");//去除空白行  
-        // html = html.replace("    +| +|　+", ""); //去除空白  
-        html = html.replace(/[ |\t]/g, '');
+        html = html.replace("((\r\n)|\n)[\\s\t ]*(\\1)+", "$1").replace("^((\r\n)|\n)", "");//去除空白行  
+        html = html.replace("    +| +|　+", ""); //去除空白  
+        // html = html.replace(/[ |\t]/g, '');
         console.log('devareLabel:', html.trim());
         return html.trim();  
     };  

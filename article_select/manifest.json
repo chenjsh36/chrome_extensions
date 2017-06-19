@@ -28,7 +28,9 @@
       ],
       "js": [
         "third_party/jquery-2.0.0.min.js",
+        "third_party/echarts.common.min.js",
         "js/findMostP.js",
+        "js/count.js",
         "js/content_script.js"
       ]
     }
