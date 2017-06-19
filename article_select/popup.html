@@ -5,8 +5,9 @@
     <title>Select Web Main Content</title>
     <link rel="stylesheet" href="./css/popup.css">
     <style>
-/*      body {
+      /*body {
         min-width: 357px;
+        min-height: 500px;
         overflow-x: hidden;
       }
 
@@ -31,8 +32,11 @@
   </head>
   <body>
     <div id="main">
-      <button id="mainContent">网页正文</button>
+      <!-- <button id="mainContent">网页正文</button> -->
+      <label class="radio-label" for="ana-dom"><input type="radio" name="analysis" value="dom" id="ana-dom">Dom 分析</label>
+      <label class="radio-label" for="ana-text"><input type="radio" name="analysis" value="text" id="ana-text">文本分析</label>
       <div id="message"></div>
+
     </div>
   </body>
 </html>

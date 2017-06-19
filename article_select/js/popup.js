@@ -26,5 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     })
+
+    var $anaLabel = $('.radio-label');
+    $anaLabel.on('click', function() {
+        var for = $(this).attr('for');
+        alert(for);
+    })
 })
 
