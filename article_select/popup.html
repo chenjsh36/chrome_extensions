@@ -4,22 +4,6 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <title>Select Web Main Content</title>
     <link rel="stylesheet" href="./css/popup.css">
-    <style>
-      /*body {
-        min-width: 357px;
-        min-height: 500px;
-        overflow-x: hidden;
-      }
-
-      img {
-        margin: 5px;
-        border: 2px solid black;
-        vertical-align: middle;
-        width: 75px;
-        height: 75px;
-      }*/
-    </style>
-
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
@@ -32,11 +16,10 @@
   </head>
   <body>
     <div id="main">
-      <!-- <button id="mainContent">网页正文</button> -->
-      <label class="radio-label" for="ana-dom"><input type="radio" name="analysis" value="dom" id="ana-dom">Dom 分析</label>
-      <label class="radio-label" for="ana-text"><input type="radio" name="analysis" value="text" id="ana-text">文本分析</label>
-      <div id="message"></div>
-
+      <ul>
+        <li><div class="analysis-item" id="dom-analysis">DOM树分析</div></li>
+        <li><div class="analysis-item" id="text-analysis">文本分析</div></li>
+      </ul>
     </div>
   </body>
 </html>

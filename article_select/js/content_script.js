@@ -2,6 +2,9 @@ var initArtContent;
 var artContent;
 var $shadowBox;
 var ifShow = false;
+var ifDomShow = false;
+var ifTextShow = false;
+console.log('hello');
 
 function initShadowBox() {
     var $innerBox;
@@ -105,6 +108,36 @@ function setShadowBox(dom) {
 }
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+
+    sendResponse('[From Content Script] ' + message + '开始');
+    console.log('onMessage:' + message);
+    if (message === 'DOM树分析') {
+        if (ifDomShow === false) {
+            // 解析 dom 树法寻找正文内容
+            var body = document.querySelector('body');
+            var before = new Date();
+            artContent = getArticleContent(body);
+            initArtContent = artContent
+            var after = new Date();
+            console.log('[From Content Script]分析正文内容耗时：', after - before, ' 毫秒');
+
+            // 设置正文边框
+            setShadowBox(artContent);
+            ifDomShow = true;
+        } else {
+            $shadowBox.hide();
+            ifDomShow = false;
+        }
+    }
+    if (message === '文本分析') {
+        if (ifTextShow === false) {
+            initArtDistribution();
+            ifTextShow = true;
+        } else {
+            hideArtDistribution();
+            ifTextShow = false;
+        }
+    }
     if (message === '切换界面') {
         if (ifShow === false) {
             // 解析 dom 树法寻找正文内容
